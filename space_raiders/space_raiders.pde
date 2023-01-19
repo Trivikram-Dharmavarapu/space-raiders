@@ -8,19 +8,19 @@ public int widthOfWindow, heightOfWindow;
 private int score = 0;
 private String SCORE_FORMAT = "Score : %s";
 private int screen = 1;
-PImage heatImage, enemyImage;
+PImage enemyImage;
 
 void setup() {
     frameRate(30);
     widthOfWindow = 1000;
     heightOfWindow = 500;
-    size(1000, 500);
-    enemyImage = loadImage("enemy.jpg");
+    size(1000, 500); // Size of Game window
+    enemyImage = loadImage("enemy.jpg"); // Loading the enemy image
 }
 
 void draw() {
-    background(0);
-    if (screen == 1)
+    background(0); // Setting background color to black
+    if (screen == 1) // selecting screens based on indexs 1,2,3,4 respectively.
         gameScreen();
     else if (screen == 2)
         levelOneScreen();
@@ -30,7 +30,7 @@ void draw() {
         gameOverScreen();
 
 }
-
+// Mouse event handler, based on screen either to element enemy or to procees to next screen
 void mousePressed() {
     if (screen == 1 && mouseButton == LEFT) {
         eliminateEnemies(mouseX, mouseY);
