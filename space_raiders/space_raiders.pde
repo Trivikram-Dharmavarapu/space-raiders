@@ -1,4 +1,5 @@
 import java.util.*;
+import processing.sound.*;
 
 private int MAX_NUMBER_ENEMIES_PER_MINUTE = 5;
 private Set < Coordinates > enemies = new HashSet < Coordinates > ();
@@ -16,6 +17,8 @@ void setup() {
     heightOfWindow = 500;
     size(1000, 500); // Size of Game window
     enemyImage = loadImage("enemy.jpg"); // Loading the enemy image
+    SoundFile file = new SoundFile(this, "music.mp3");
+    file.play();
 }
 
 void draw() {
