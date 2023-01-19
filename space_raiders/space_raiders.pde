@@ -10,6 +10,8 @@ private int score = 0;
 private String SCORE_FORMAT = "Score : %s";
 private int screen = 1;
 PImage enemyImage;
+SoundFile file;
+int time = millis();
 
 void setup() {
     frameRate(30);
@@ -17,14 +19,20 @@ void setup() {
     heightOfWindow = 500;
     size(1000, 500); // Size of Game window
     enemyImage = loadImage("enemy.jpg"); // Loading the enemy image
-    SoundFile file = new SoundFile(this, "music.mp3");
+    file = new SoundFile(this, "music.mp3");
     file.play();
 }
 
 void draw() {
+  if (millis() > time + 25000)
+  {
+    time = millis();
+    file.play();
+  }
     background(0); // Setting background color to black
-    if (screen == 1) // selecting screens based on indexs 1,2,3,4 respectively.
+    if (screen == 1){ // selecting screens based on indexs 1,2,3,4 respectively.
         gameScreen();
+    }
     else if (screen == 2)
         levelOneScreen();
     else if (screen == 3)
