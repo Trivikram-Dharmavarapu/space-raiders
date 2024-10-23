@@ -1,5 +1,3 @@
-# space-raiders
-
 # Space Raiders
 
 **Space Raiders** is a space-themed game developed using Processing. The game consists of multiple levels, where the player must eliminate enemies by clicking on them. The game tracks the player's score and progresses through levels as the score increases.
